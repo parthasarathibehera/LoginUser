@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table align="center" border="1">
+    <tr><th style="color: white;background-color: blue" colspan="4">All Users</th></tr>
+    <tr><th style="color: white;background-color: blue" colspan="4">Welcome - {% for y in result %}
+        {{ y.user_name }}
+    {% endfor %}
+    </th></tr>
+    <tr>
+        <th>IDNO</th>
+        <th>NAME</th>
+        <th>PHONE</th>
+        <th>EMAIL</th>
+    </tr>
+    {% for x in data %}
+        <tr>
+        <th>{{ x.user_id }}</th>
+        <th>{{ x.user_name }}</th>
+        <th>{{ x.user_phno }}</th>
+        <th>{{ x.user_email }}</th>
+        </tr>
+    {% endfor %}
+
+
+</table>
+<h3 align="center"><a href="{% url 'logout' %}">Logout</a></h3>
+</body>
+</html>
